@@ -1,0 +1,1 @@
+This was the first program assingment for CS 3304. We had to create an evalutor for logical expressions written in postfix notation written in python. Read the assingment pdf for more information about the project. 
