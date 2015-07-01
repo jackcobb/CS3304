@@ -1,0 +1,28 @@
+consult(x).
+nl, write('Jack Cobb'), nl, write('905659469'), nl.
+
+nl, write('Does Dr. Smith teach Computer Architecture?'), teaches('Dr. Smith', 'Computer Architecture').
+
+nl, write('Who teaches Information Retrieval?'), findall((Teacher), teaches(Teacher, 'Information Retrieval'), Teacher).
+
+nl, write('What does Dr. Jones teach?'), findall((Class),teaches('Dr. Jones', Class), Classes).
+
+nl, write('What is Dr. Gibson\'s schedule?'), findall((Course, Time, Place), schedule('Dr. Gibson', Course, Time, Place), Schedule).
+
+nl, write('Who is scheduled to teach what on TTH from 9:00 -- 11:00am?'), findall((Lecturer, Course),schedule(Lecturer, Course, 'TTH 9:00-11:00 a.m.', _), Courses).
+
+nl, write('When do Dr. Smith and Dr. Jones teach at the same time?'), findall((Time),sametime('Dr. Smith', 'Dr. Jones', Time), Time).
+
+nl, write('Who teaches at the same time Dr. Ray teaches?'), findall((Lecturer,Time), sametime('Dr. Ray', Lecturer, Time), Classes).
+
+nl, write('What courses do Michael and JoAnne have in common?'), findall((Course), coursesincommon('Michael', 'JoAnne', Course), Course).
+
+nl, write('What courses do Bill and Joanne have in common?'), findall((Course), coursesincommon('Bill', 'JoAnne', Course), Course).
+
+nl, write('Who is taking course of type "Core"?'), takingtype(Student, 'Core').
+
+nl, write('What type of courses is JoAnne taking?'), findall((Type), takingtype('JoAnne', Type), Type).
+
+nl, write('What courses are scheduled at the same time in the same room?'), findall((Room, CourseA, CourseB, Time), schedulingconflict('room', Room, _, CourseA, CourseB, Time), Room).
+
+nl, write('Which faculty member is scheduled to teach two classes at the same time?'), findall((Lecturer, CourseA, CourseB, Time), schedulingconflict('teacher', _, Lecturer, CourseA, CourseB, Time), Teacher).
